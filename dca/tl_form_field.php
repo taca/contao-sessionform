@@ -19,7 +19,7 @@
  * Software Foundation website at http://www.gnu.org/licenses/.
  *
  * PHP version 5
- * @copyright  Andreas Schempp 2009
+ * @copyright  Andreas Schempp 2009-2010
  * @author     Andreas Schempp <andreas@schempp.ch>
  * @license    http://opensource.org/licenses/lgpl-3.0.html
  * @version    $Id$
@@ -34,31 +34,31 @@ $GLOBALS['TL_DCA']['tl_form_field']['palettes']['sessionOption']		= '{type_legen
 $GLOBALS['TL_DCA']['tl_form_field']['palettes']['sessionCalculator']	= '{type_legend},type,name,label;{fconfig_legend},calculation,currency,currencyPosition;{expert_legend:hide},value,class';
 $GLOBALS['TL_DCA']['tl_form_field']['palettes']['hiddenOption']			= '{type_legend},type,name,label;{options_legend},options;{fconfig_legend},multiple;{expert_legend:hide},class;{submit_legend},addSubmit';
 
-foreach( $GLOBALS['TL_DCA']['tl_form_field']['palettes'] as $strName => $strPalette )
+foreach( $GLOBALS['TL_DCA']['tl_form_field']['palettes'] as $name => $palette )
 {
 	// Fields not to load session for
 	$arrBlocked = array('__selector__', 'fancyupload', 'upload', 'submit', 'sessionText', 'sessionOption', 'sessionCalculator');
-	if (in_array($strName, $arrBlocked))
+	if (in_array($name, $arrBlocked))
 		continue;
 	
-	$strPalette = preg_replace('@([,|;]value)([,|;])@', '$1,loadSession$2', $strPalette, -1, $intCount);
+	$palette = preg_replace('@([,|;]value)([,|;])@', '$1,loadSession$2', $palette, -1, $intCount);
 	
 	if ($intCount == 0)
 	{
-		$strPalette = preg_replace('@([,|;])(class[,|;])@', '$1loadSession,$2', $strPalette, -1, $intCount);
+		$palette = preg_replace('@([,|;])(class[,|;])@', '$1loadSession,$2', $palette, -1, $intCount);
 	}
 	
 	if ($intCount == 0)
 	{
-		$strPalette = preg_replace('@([,|;]{expert_legend(:hide)?})([,|;])@', '$1,loadSession$3', $strPalette, -1, $intCount);
+		$palette = preg_replace('@([,|;]{expert_legend(:hide)?})([,|;])@', '$1,loadSession$3', $palette, -1, $intCount);
 	}
 	
 	if ($intCount == 0)
 	{
-		$strPalette .= ';{expert_legend:hide},loadSession';
+		$palette .= ';{expert_legend:hide},loadSession';
 	}
 	 
-	$GLOBALS['TL_DCA']['tl_form_field']['palettes'][$strName] = $strPalette;
+	$GLOBALS['TL_DCA']['tl_form_field']['palettes'][$name] = $palette;
 }
 
 
