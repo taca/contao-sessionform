@@ -48,7 +48,7 @@ class FormSessionOption extends FormSelectMenu
 		
 		if (!is_array($_SESSION['FORM_DATA'][$this->strName]))
 		{
-			return sprintf('<input type="hidden" name="%s" value="%s" /> %s',
+			return sprintf('<input type="hidden" name="%s" value="%s" /><span class="session">%s</span>',
 							$this->strName,
 							specialchars($_SESSION['FORM_DATA'][$this->strName]),
 							implode('<br />', $arrOptions));

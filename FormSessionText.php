@@ -30,7 +30,7 @@ class FormSessionText extends FormTextField
 
 	public function generate()
 	{
-		return sprintf('<input type="hidden" name="%s" value="%s" /> %s',
+		return sprintf('<input type="hidden" name="%s" value="%s" /><span class="session">%s<span>',
 						$this->strName,
 						specialchars($_SESSION['FORM_DATA'][$this->strName]),
 						nl2br($_SESSION['FORM_DATA'][$this->strName]));
