@@ -34,9 +34,11 @@ class SessionForm extends Frontend
 
 	public function loadFormData(Widget $objWidget, $intForm)
 	{
-		if ($objWidget->loadSession && strlen($this->Input->post($objWidget->name)))
+		$varValue = $this->Input->post($objWidget->name);
+	
+		if ($objWidget->loadSession && !empty($varValue))
 		{
-			$objWidget->value = $this->Input->post($objWidget->name);
+			$objWidget->value = $varValue;
 		}
 		
 		return $objWidget;
