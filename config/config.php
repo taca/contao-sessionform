@@ -1,8 +1,8 @@
-<?php if (!defined('TL_ROOT')) die('You can not access this file directly!');
+<?php if (!defined('TL_ROOT')) die('You cannot access this file directly!');
 
 /**
  * Contao Open Source CMS
- * Copyright (C) 2005-2010 Leo Feyer
+ * Copyright (C) 2005-2011 Leo Feyer
  *
  * Formerly known as TYPOlight Open Source CMS.
  *
@@ -23,6 +23,7 @@
  * PHP version 5
  * @copyright  Andreas Schempp 2009-2011
  * @author     Andreas Schempp <andreas@schempp.ch>
+ * @author     Kamil Kuzminski <kamil.kuzminski@gmail.com>
  * @license    http://opensource.org/licenses/lgpl-3.0.html
  * @version    $Id$
  */
@@ -56,4 +57,5 @@ $GLOBALS['FE_MOD']['miscellaneous']['resetFormData']	= 'ModuleResetFormData';
  * Hooks
  */
 $GLOBALS['TL_HOOKS']['loadFormField'][]					= array('SessionForm', 'loadFormData');
+$GLOBALS['TL_HOOKS']['processFormData'][]				= array('SessionForm', 'storeFiles');
 
