@@ -68,7 +68,7 @@ class FormSessionOption extends FormSelectMenu
 	}
 	
 	
-	private function getOptions()
+	protected function getOptions()
 	{
 		$arrOptions = array();
 		foreach( $this->arrOptions as $option )
