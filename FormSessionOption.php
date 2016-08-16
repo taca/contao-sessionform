@@ -39,7 +39,7 @@ class FormSessionOption extends FormSelectMenu
 		switch( $strKey )
 		{
 			case 'value':
-				return implode(',', $this->getOptions());
+				return implode(',', $this->getSessionOptions());
 			
 			default:
 				return parent::__get($strKey);
@@ -49,7 +49,7 @@ class FormSessionOption extends FormSelectMenu
 	
 	public function generate()
 	{
-		$arrOptions = $this->getOptions();
+		$arrOptions = $this->getSessionOptions();
 		
 		if (!is_array($_SESSION['FORM_DATA'][$this->strName]))
 		{
@@ -73,7 +73,7 @@ class FormSessionOption extends FormSelectMenu
 	}
 	
 	
-	protected function getOptions()
+	private function getSessionOptions()
 	{
 		$arrOptions = array();
 		foreach( $this->arrOptions as $option )
