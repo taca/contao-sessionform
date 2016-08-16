@@ -29,10 +29,10 @@
 /**
  * Palettes
  */
-$GLOBALS['TL_DCA']['tl_form_field']['palettes']['sessionText']			= '{type_legend},type,name,label;{expert_legend:hide},value,class';
-$GLOBALS['TL_DCA']['tl_form_field']['palettes']['sessionOption']		= '{type_legend},type,name,label;{options_legend},options;{fconfig_legend},multiple;{expert_legend:hide},class;{submit_legend},addSubmit';
-$GLOBALS['TL_DCA']['tl_form_field']['palettes']['sessionCalculator']	= '{type_legend},type,name,label;{fconfig_legend},calculation,currency,currencyPosition;{expert_legend:hide},value,class';
-$GLOBALS['TL_DCA']['tl_form_field']['palettes']['hiddenOption']			= '{type_legend},type,name,label;{options_legend},options;{fconfig_legend},multiple;{expert_legend:hide},class;{submit_legend},addSubmit';
+$GLOBALS['TL_DCA']['tl_form_field']['palettes']['sessionText']			= '{type_legend},type,name,label;{expert_legend:hide},class,value;{template_legend:hide},customTpl';
+$GLOBALS['TL_DCA']['tl_form_field']['palettes']['sessionOption']		= '{type_legend},type,name,label;{options_legend},options;{fconfig_legend},multiple;{expert_legend:hide},class;{template_legend:hide},customTpl;{submit_legend},addSubmit';
+$GLOBALS['TL_DCA']['tl_form_field']['palettes']['sessionCalculator']	= '{type_legend},type,name,label;{fconfig_legend},calculation,currency,currencyPosition;{expert_legend:hide},class,value;{template_legend:hide},customTpl';
+$GLOBALS['TL_DCA']['tl_form_field']['palettes']['hiddenOption']			= '{type_legend},type,name,label;{options_legend},options;{fconfig_legend},multiple;{expert_legend:hide},class;{template_legend:hide},customTpl;{submit_legend},addSubmit';
 
 foreach( $GLOBALS['TL_DCA']['tl_form_field']['palettes'] as $name => $palette )
 {
