@@ -28,6 +28,11 @@
 
 class FormHiddenOption extends FormHidden
 {
+	/**
+	 * Template
+	 * @var string
+	 */
+	protected $strTemplate = 'form_widget';
 
 	public function generate()
 	{

@@ -27,6 +27,12 @@
 
 class FormSessionText extends FormTextField
 {
+	/**
+	 * Template
+	 *
+	 * @var string
+	 */
+	protected $strTemplate = 'form_widget';
 
 	public function generate()
 	{

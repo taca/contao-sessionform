@@ -28,6 +28,11 @@
 
 class FormSessionOption extends FormSelectMenu
 {
+	/**
+	 * Template
+	 * @var string
+	 */
+	protected $strTemplate = 'form_widget';
 	
 	public function __get($strKey)
 	{
