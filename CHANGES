@@ -1,6 +1,19 @@
+2016-08-16  Takahiro Kambe  <taca@back-street.net>
+
+	* Add README based on description of ER2.
+
+	* Add customTpl as Contao 3.5.  It raise minimum Contao version to
+	  3.5.
+
+	* Revert FormSessionOption::getOptions() to private and rename it
+	  to FormSessionOption::getSessionOptions().
+
+	* Explictly specify "form_widget" template although it might be
+	  better to provide sessionform own templates.
+
 2016-06-13  Takahiro Kambe  <taca@back-street.net>
 
-	* Make FormSessionOption::getOptions protected instead of private.
+	* Make FormSessionOption::getOptions() protected instead of private.
 
 	* Add Japanese language files.
 
